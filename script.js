@@ -31,3 +31,27 @@ window.addEventListener("load", () => {
 if (history.scrollRestoration) {
   history.scrollRestoration = "manual";
 }
+
+// スライドショーに使用する画像のリスト（自分の画像パスに変更してください）
+const images = [
+  "images/都会夜景.jpg",
+  "images/work1.jpg", // 先ほど作成した施工実績の画像などを流用
+  "images/work2.jpg",
+];
+
+let currentIndex = 0;
+const slideBg = document.getElementById("slide-bg");
+
+function changeBackground() {
+  // 画像をセット
+  slideBg.style.backgroundImage = `url('${images[currentIndex]}')`;
+
+  // 次のインデックスへ（最後まで行ったら0に戻る）
+  currentIndex = (currentIndex + 1) % images.length;
+}
+
+// 最初に1回実行
+changeBackground();
+
+// 5秒（5000ミリ秒）ごとに画像を切り替える
+setInterval(changeBackground, 5000);
