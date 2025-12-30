@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #003366; /* 信頼感のあるネイビー */
+  --accent-color: #e6b422; /* 丁寧に仕上げるイメージのゴールド/イエロー（アクセント） */
+  --text-color: #333333; /* 基本の文字色 */
+  --light-bg: #f8f9fa; /* 薄い背景色 */
+  --border-color: #dddddd; /* 線の色 */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +29,12 @@ header {
   position: sticky; /* スクロールしても上に固定する */
   top: 0;
   z-index: 1000;
+}
+
+/* ナビゲーションの文字色 */
+header nav ul li a {
+  color: var(--text-color);
+  font-weight: 600;
 }
 
 /* コンテナ（中央寄せにする） */
@@ -62,16 +76,18 @@ header {
   color: #007bff; /* お手本のようなアクセントカラー（青） */
 }
 
-/* お問い合わせボタンを強調する */
+/* お問い合わせボタン（アクセントカラーに） */
 .btn-contact {
-  background-color: #007bff;
+  background-color: var(--primary-color) !important;
   color: #fff !important;
-  padding: 8px 18px;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 8px 20px !important;
+  transition: opacity 0.3s;
 }
 
 .btn-contact:hover {
   background-color: #0056b3;
+  opacity: 0.8;
 }
 
 /* メインビジュアルの設定 */
@@ -150,43 +166,57 @@ header {
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 5px;
+  color: var(--primary-color);
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+/* タイトルの下に短い棒線を引く（プロっぽい演出） */
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
 }
 
 .section-subtitle {
   text-align: center;
-  color: #007bff;
+  color: #888;
   font-weight: bold;
   margin-bottom: 50px;
   letter-spacing: 2px;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
 }
 
 /* テーブル（表）のデザイン */
 .about-table {
   width: 100%;
-  border-collapse: collapse; /* 枠線を一本にする */
-  background-color: #fff;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  border-collapse: collapse;
 }
 
 .about-table th,
 .about-table td {
-  padding: 25px;
-  border-bottom: 1px solid #eee; /* 下線だけで区切るのが今風 */
+  padding: 20px;
+  border: 1px solid #eee;
 }
 
 .about-table th {
+  background-color: #f8fbff; /* 爽やかな青系の背景 */
   width: 30%;
   text-align: left;
-  background-color: #f4f7f9;
-  color: #555;
-  font-weight: bold;
 }
 
 .about-table td {
-  width: 70%;
-  color: #333;
+  background-color: #fff;
 }
 
 /* スマホ対応：画面が狭いときは縦並びにする */
@@ -252,11 +282,12 @@ header {
   margin: 0 20px;
   min-width: 80px;
   text-align: center;
+  background-color: var(--primary-color);
 }
 
 /* カテゴリーの色分け例 */
 .category-update {
-  background-color: #28a745; /* 更新情報は緑にするなど */
+  background-color: #666; /* 更新情報は少し色を抑える */
 }
 
 /* タイトル */
@@ -443,6 +474,7 @@ footer {
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 薄い影 */
   transition: transform 0.3s;
+  border-top: 4px solid var(--primary-color); /* 上部にラインを入れる */
 }
 
 /* ホバーした時に少し浮き上がる演出 */
@@ -530,6 +562,11 @@ footer {
   color: #007bff;
   font-weight: bold;
   margin-bottom: 5px;
+  color: var(--primary-color);
+  background: #f0f4f8;
+  padding: 2px 8px;
+  display: inline-block;
+  border-radius: 3px;
 }
 
 .works-name {
