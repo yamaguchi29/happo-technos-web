@@ -1,13 +1,3 @@
-// ボタンとメッセージの要素を取得
-const button = document.getElementById("myButton");
-const message = document.getElementById("message");
-
-// ボタンがクリックされた時の処理
-button.addEventListener("click", () => {
-  message.textContent = "こんにちは！JavaScriptが動きました！";
-  message.style.color = "blue";
-});
-
 // 画面内に入ってきたら実行する処理
 const observer = new IntersectionObserver(
   (entries) => {
@@ -28,3 +18,16 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".fade-in").forEach((el) => {
   observer.observe(el);
 });
+
+// ページが読み込まれたとき（リロード時含む）に実行
+window.addEventListener("load", () => {
+  // URLの末尾に #contact が含まれていない場合だけ、トップに戻す
+  if (window.location.hash !== "#contact") {
+    window.scrollTo(0, 0);
+  }
+});
+
+// スクロール復元を無効にする設定
+if (history.scrollRestoration) {
+  history.scrollRestoration = "manual";
+}

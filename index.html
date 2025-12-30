@@ -8,6 +8,10 @@
     />
     <title>八豊テクノス株式会社</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -19,9 +23,9 @@
         <nav>
           <ul class="nav-links">
             <li><a href="#">トップページ</a></li>
-            <li><a href="#company">会社概要</a></li>
-            <li><a href="#business">事業内容</a></li>
-            <li><a href="#results">施工実績</a></li>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#service">事業内容</a></li>
+            <li><a href="#works">施工実績</a></li>
             <li><a href="#recruit">求人情報</a></li>
             <li><a href="#contact" class="btn-contact">お問い合わせ</a></li>
           </ul>
@@ -39,11 +43,38 @@
       </div>
     </section>
 
+    <section id="news" class="news-section fade-in">
+      <div class="container">
+        <h2 class="section-title">News</h2>
+        <p class="section-subtitle">お知らせ</p>
+        <ul class="news-list">
+          <li>
+            <a href="#">
+              <span class="news-date">2026.01.01</span>
+              <span class="news-category category-update">更新情報</span>
+              <span class="news-title"
+                >※ホームページ作成中のため、★部分について変更予定。</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="news-date">2025.12.31</span>
+              <span class="news-category">お知らせ</span>
+              <span class="news-title">ホームページを公開いたしました。</span>
+            </a>
+          </li>
+        </ul>
+        <div class="news-more">
+          <a href="#" class="btn-outline">一覧を見る</a>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="about-section fade-in">
       <div class="container">
         <h2 class="section-title">Company Profile</h2>
         <p class="section-subtitle">会社概要</p>
-
         <table class="about-table">
           <tr>
             <th>会社名</th>
@@ -66,7 +97,7 @@
           </tr>
           <tr>
             <th>代表者</th>
-            <td>代表取締役　馬場康浩</td>
+            <td>代表取締役 馬場康浩</td>
           </tr>
           <tr>
             <th>TEL/FAX</th>
@@ -81,63 +112,197 @@
       </div>
     </section>
 
-    <section id="news" class="news-section fade-in">
+    <section id="service" class="service-section fade-in">
       <div class="container">
-        <h2 class="section-title">News</h2>
-        <p class="section-subtitle">お知らせ</p>
+        <h2 class="section-title">Service</h2>
+        <p class="section-subtitle">事業内容</p>
 
-        <ul class="news-list">
-          <li>
-            <a href="#">
-              <span class="news-date">2026.01.01</span>
-              <span class="news-category category-update">更新情報</span>
-              <span class="news-title"
-                >★サービス紹介ページに新メニューを追加しました。</span
-              >
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="news-date">2025.12.31</span>
-              <span class="news-category">お知らせ</span>
-              <span class="news-title">ホームページを公開いたしました。</span>
-            </a>
-          </li>
-        </ul>
+        <div class="service-container">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-laptop"></i>
+            </div>
+            <h3>★Web制作</h3>
+            <p>
+              ★お客様のビジネスに合わせた、高品質でレスポンシブなWebサイトを制作します。
+            </p>
+          </div>
 
-        <div class="news-more">
-          <a href="#" class="btn-outline">一覧を見る</a>
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3>★システム開発</h3>
+            <p>
+              ★業務効率化のためのWebシステムや、スマートフォンアプリの開発を行います。
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3>★ITコンサルティング</h3>
+            <p>
+              ★最新のテクノロジーを活用し、デジタル変革（DX）の推進をサポートします。
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <h1>JavaScriptで動くサイト</h1>
-    <p id="message">ここはまだ動いていません。</p>
-    <button id="myButton">クリックしてね</button>
+    <section id="works" class="works-section fade-in">
+      <div class="container">
+        <h2 class="section-title">Works</h2>
+        <p class="section-subtitle">施工実績</p>
+
+        <div class="works-grid">
+          <div class="works-item">
+            <div class="works-img">
+              <img src="images/施工実績1.jpg" alt="オフィスビル外装工事" />
+            </div>
+            <div class="works-info">
+              <p class="works-category">★外装工事</p>
+              <h3 class="works-name">★千代田区 オフィスビル</h3>
+            </div>
+          </div>
+
+          <div class="works-item">
+            <div class="works-img">
+              <img
+                src="images/施工実績2.jpg"
+                alt="マンション内装リノベーション"
+              />
+            </div>
+            <div class="works-info">
+              <p class="works-category">★内装工事</p>
+              <h3 class="works-name">★新宿区 マンションリノベーション</h3>
+            </div>
+          </div>
+
+          <div class="works-item">
+            <div class="works-img">
+              <img src="images/施工実績3.jpg" alt="店舗改装工事" />
+            </div>
+            <div class="works-info">
+              <p class="works-category">★店舗改修</p>
+              <h3 class="works-name">★渋谷区 カフェ店舗改装</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recruit" class="recruit-section fade-in">
+      <div class="container">
+        <h2 class="section-title">Recruit</h2>
+        <p class="section-subtitle">採用情報</p>
+
+        <div class="recruit-message">
+          <h3>共に未来を築く仲間を募集しています</h3>
+          <p>
+            私たちは、技術の向上はもちろん、チームワークを大切にする仲間を求めています。<br />
+            未経験の方でも、ベテラン社員が丁寧に指導する環境が整っています。
+          </p>
+        </div>
+
+        <table class="recruit-table">
+          <tr>
+            <th>職種</th>
+            <td>★現場施工管理・技術スタッフ</td>
+          </tr>
+          <tr>
+            <th>給与</th>
+            <td>
+              ★月給 xx0,000円 〜 xx0,000円<br /><small
+                >※経験・能力を考慮の上、決定します。</small
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>勤務地</th>
+            <td>★本社および各施工現場（都内近郊）</td>
+          </tr>
+          <tr>
+            <th>勤務時間</th>
+            <td>★xx:00 〜 xx:00（休憩xx分）</td>
+          </tr>
+          <tr>
+            <th>福利厚生</th>
+            <td>★社会保険完備、昇給年1回、賞与年2回、資格取得支援制度あり</td>
+          </tr>
+        </table>
+
+        <div class="recruit-action">
+          <a href="#contact" class="btn-primary">採用について問い合わせる</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section fade-in">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">お問い合わせ</p>
+
+        <form
+          action="https://formspree.io/f/xregwpok"
+          method="POST"
+          class="contact-form"
+        >
+          <div class="form-group">
+            <label for="name">お名前</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="山田 太郎"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@mail.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">お問い合わせ内容</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="ご自由に入力してください"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">送信する</button>
+        </form>
+      </div>
+    </section>
 
     <footer>
       <div class="footer-container">
         <div class="footer-info">
-          <div class="footer-logo">Teru-Tec Style</div>
-          <p>
-            最新のテクノロジーとデザインで、<br />理想のWebサイトを実現します。
-          </p>
+          <div class="footer-logo">八豊テクノス株式会社</div>
+          <p>空調から未来をHAPPYに</p>
         </div>
-
         <div class="footer-nav">
           <h4>Menu</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#about">Company</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">トップページ</a></li>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#service">事業内容</a></li>
+            <li><a href="#works">施工実績</a></li>
+            <li><a href="#recruit">求人情報</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy; 2024 Teru-Tec Style. All Rights Reserved.</p>
+        <p>&copy; 2025 happo-technos Style. All Rights Reserved.</p>
       </div>
     </footer>
   </body>
