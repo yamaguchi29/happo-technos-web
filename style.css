@@ -159,7 +159,7 @@ header {
    3. メインビジュアル (Main Visual)
    ========================================================================== */
 .main-visual {
-  height: 80vh;
+  /* height: 80vh;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("images/都会夜景.jpg");
@@ -169,7 +169,45 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: var(--white); */
+  height: 80vh;
+  width: 100%;
+  position: relative; /* 子要素の基準にする */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   color: var(--white);
+}
+
+.main-visual-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 文字より後ろに配置 */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1.5s ease-in-out; /* 1.5秒かけてふわっと切り替える */
+}
+
+/* 文字を読みやすくするための暗いフィルター */
+.main-visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* 0.4の部分で暗さを調整 */
+  z-index: 0;
+}
+
+.visual-content {
+  position: relative;
+  z-index: 1; /* フィルターより手前に配置 */
 }
 
 .main-title {
