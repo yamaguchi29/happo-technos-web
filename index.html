@@ -2,14 +2,143 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="八豊テクノス株式会社のホームページ。会社概要や事業内容などを掲載しています。" />
+    <meta
+      name="description"
+      content="八豊テクノス株式会社のホームページ。会社概要や事業内容などを掲載しています。"
+    />
     <title>八豊テクノス株式会社</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="#">八豊テクノス株式会社</a>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">トップページ</a></li>
+            <li><a href="#company">会社概要</a></li>
+            <li><a href="#business">事業内容</a></li>
+            <li><a href="#results">施工実績</a></li>
+            <li><a href="#recruit">求人情報</a></li>
+            <li><a href="#contact" class="btn-contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="main-visual">
+      <div class="visual-content fade-in">
+        <h2 class="main-title">空調から未来をHAPPYに</h2>
+        <p class="sub-title">HAPPO-TECHNOS Co.,Ltd.</p>
+        <div class="visual-buttons">
+          <a href="#service" class="btn-primary">サービスを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section fade-in">
+      <div class="container">
+        <h2 class="section-title">Company Profile</h2>
+        <p class="section-subtitle">会社概要</p>
+
+        <table class="about-table">
+          <tr>
+            <th>会社名</th>
+            <td>八豊テクノス株式会社</td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td>★2024年4月</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>
+              〒192-0371<br />
+              東京都八王子市南陽台3-4-10
+            </td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>空調設備工事業</td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td>代表取締役　馬場康浩</td>
+          </tr>
+          <tr>
+            <th>TEL/FAX</th>
+            <td>
+              042-689-5022<br />
+              電話勧誘はお断りしています<br />
+              弊社では電話勧誘による契約は締結いたしません<br />
+              特定商取引に関する法律 第17条により再勧誘は禁止されています<br />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="news" class="news-section fade-in">
+      <div class="container">
+        <h2 class="section-title">News</h2>
+        <p class="section-subtitle">お知らせ</p>
+
+        <ul class="news-list">
+          <li>
+            <a href="#">
+              <span class="news-date">2026.01.01</span>
+              <span class="news-category category-update">更新情報</span>
+              <span class="news-title"
+                >★サービス紹介ページに新メニューを追加しました。</span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="news-date">2025.12.31</span>
+              <span class="news-category">お知らせ</span>
+              <span class="news-title">ホームページを公開いたしました。</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="news-more">
+          <a href="#" class="btn-outline">一覧を見る</a>
+        </div>
+      </div>
+    </section>
+
     <h1>JavaScriptで動くサイト</h1>
     <p id="message">ここはまだ動いていません。</p>
     <button id="myButton">クリックしてね</button>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <div class="footer-logo">Teru-Tec Style</div>
+          <p>
+            最新のテクノロジーとデザインで、<br />理想のWebサイトを実現します。
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#about">Company</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Teru-Tec Style. All Rights Reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

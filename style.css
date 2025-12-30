@@ -1,9 +1,380 @@
-body {
-  font-family: sans-serif;
-  text-align: center;
-  margin-top: 50px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-button {
-  padding: 10px 20px;
-  cursor: pointer;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+}
+
+/* ヘッダーの設定 */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 下に薄い影を入れて清潔感を出す */
+  padding: 15px 0;
+  position: sticky; /* スクロールしても上に固定する */
+  top: 0;
+  z-index: 1000;
+}
+
+/* コンテナ（中央寄せにする） */
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* ロゴとメニューを両端に離す */
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* ロゴの文字 */
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+/* ナビゲーションメニューを横並びにする */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s; /* ホバー時にふわっと色を変える */
+}
+
+.nav-links a:hover {
+  color: #007bff; /* お手本のようなアクセントカラー（青） */
+}
+
+/* お問い合わせボタンを強調する */
+.btn-contact {
+  background-color: #007bff;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 5px;
+}
+
+.btn-contact:hover {
+  background-color: #0056b3;
+}
+
+/* メインビジュアルの設定 */
+.main-visual {
+  height: 80vh; /* 画面の高さの80%を使う */
+  width: 100%;
+  /* 背景画像の設定 */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072");
+  background-size: cover; /* 画面いっぱいに広げる */
+  background-position: center; /* 画像の中心を表示 */
+  display: flex;
+  align-items: center; /* 垂直方向中央 */
+  justify-content: center; /* 水平方向中央 */
+  text-align: center;
+  color: #fff; /* 文字色を白に */
+}
+
+.visual-content {
+  padding: 20px;
+}
+
+.main-title {
+  font-size: 3rem; /* 大きな文字 */
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* ボタンのデザイン */
+.btn-primary {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* 少し上に浮くアニメーション */
+}
+
+/* HTMLに class="fade-in" と書くだけで自動的にふわっと表示されるようになる */
+/* 最初は透明で、30px下に下げておく */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s, transform 1.2s; /* 1.2秒かけて変化させる */
+}
+
+/* このクラスがついたら、不透明にして元の位置に戻す */
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 会社概要の追加 */
+.about-section {
+  padding: 100px 20px;
+  background-color: #f9f9f9; /* 少し背景色を変えてセクションを区切る */
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+/* テーブル（表）のデザイン */
+.about-table {
+  width: 100%;
+  border-collapse: collapse; /* 枠線を一本にする */
+  background-color: #fff;
+}
+
+.about-table th,
+.about-table td {
+  padding: 25px;
+  border-bottom: 1px solid #eee; /* 下線だけで区切るのが今風 */
+}
+
+.about-table th {
+  width: 30%;
+  text-align: left;
+  background-color: #f4f7f9;
+  color: #555;
+  font-weight: bold;
+}
+
+.about-table td {
+  width: 70%;
+  color: #333;
+}
+
+/* スマホ対応：画面が狭いときは縦並びにする */
+@media (max-width: 600px) {
+  .about-table th,
+  .about-table td {
+    display: block;
+    width: 100%;
+  }
+  .about-table th {
+    padding-bottom: 5px;
+    background-color: transparent;
+  }
+}
+
+/* News お知らせの追加 */
+
+.news-section {
+  padding: 100px 20px;
+  background-color: #fff;
+}
+
+.news-list {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.news-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.news-list a {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s, padding-left 0.3s;
+}
+
+/* ホバーした時の動き */
+.news-list a:hover {
+  background-color: #f8fbff;
+  padding-left: 20px; /* 少し右にずれる動き */
+  color: #007bff;
+}
+
+/* 日付 */
+.news-date {
+  font-size: 0.9rem;
+  color: #888;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+/* カテゴリータグ */
+.news-category {
+  font-size: 0.75rem;
+  background-color: #666;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin: 0 20px;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* カテゴリーの色分け例 */
+.category-update {
+  background-color: #28a745; /* 更新情報は緑にするなど */
+}
+
+/* タイトル */
+.news-title {
+  flex-grow: 1;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 長すぎる文字を「...」にする */
+}
+
+/* もっと見るボタン */
+.news-more {
+  text-align: center;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 12px 50px;
+  border: 1px solid #007bff;
+  color: #007bff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .news-list a {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .news-category {
+    margin: 10px 0;
+  }
+  .news-date {
+    width: auto;
+  }
+}
+
+/* フッターの設定 */
+footer {
+  background-color: #333; /* 濃いグレーで引き締める */
+  color: #fff;
+  padding: 60px 0 0; /* 下の余白はコピーライトがあるので0 */
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px 40px;
+}
+
+/* 左側エリア */
+.footer-logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-info p {
+  font-size: 0.9rem;
+  color: #bbb;
+  line-height: 1.8;
+}
+
+/* 右側ナビゲーション */
+.footer-nav h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  border-left: 3px solid #007bff; /* 青いアクセント線 */
+  padding-left: 10px;
+}
+
+.footer-nav ul {
+  list-style: none;
+}
+
+.footer-nav li {
+  margin-bottom: 10px;
+}
+
+.footer-nav a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+/* コピーライト部分 */
+.footer-bottom {
+  background-color: #222; /* さらに一段濃い色 */
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-info {
+    margin-bottom: 40px;
+  }
 }
